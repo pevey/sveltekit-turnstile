@@ -42,7 +42,7 @@ client-side (+page.svelte)
 server-side (+page.server.js)
 
 ```svelte
-import { validateToken } from 'sveltekit-turnstile
+import { validateToken } from 'sveltekit-turnstile'
 import { SECRET_TURNSTILE_KEY } from '$env/static/private'
 
 export const actions = {
@@ -65,3 +65,7 @@ export const actions = {
 ```
 
 Errors from within the components will be caused by a missing site key.  Any errors are caught within a try/catch block and displayed in the console.  Be sure to check the browser console if you have difficulty.
+
+## Acknowledgment
+
+This package initally borrowed from the first svelte component available for turnstile, which was written by @ghostdevv.
