@@ -1,11 +1,12 @@
 {
 	"name": "sveltekit-turnstile",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "SvelteKit components for rendering forms and validating form submissions that include cloudflare turnstile tokens for enhanced security",
 	"repository": {
       "type": "git",
       "url": "https://github.com/pevey/sveltekit-turnstile"
    },
+	"homepage": "https://pevey.com/sveltekit-turnstile",
 	"author": "Lacey Pevey",
 	"license": "MIT",
 	"keywords": [
@@ -32,10 +33,6 @@
 		"./Turnstile.svelte": {
 			"types": "./dist/Turnstile.svelte.d.ts",
 			"svelte": "./dist/Turnstile.svelte"
-		},
-		"./TurnstileElement.svelte": {
-			"types": "./dist/TurnstileElement.svelte.d.ts",
-			"svelte": "./dist/TurnstileElement.svelte"
 		},
 		"./validateToken": {
 			"types": "./dist/validateToken.d.ts",
