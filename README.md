@@ -16,9 +16,9 @@ SECRET_TURNSTILE_KEY=""
 
 ## Usage
 
-Import the `Turnstile` component on every page that will have a form with a turnstile element.  Loading the `Turnstile Element` component inside the html form element to generate a token when the form is rendered.  When the form is submitted, the token will be added to the submitted form data.
+Add the `Turnstile` component inside an html form element to generate a hidden token form field when the form is rendered.  When the form is submitted, the token will be added to the submitted form data and can be processed the same way as any other posted form data.
 
-Loading turnstile from Cloudflare via the `Turnstile` component separately from the `TurnstileElement` component allows us to have multiple forms protected by turnstile loaded at the same time.  The `Turnstile` component will not attempt to load the turnstile script from Cloudflare if it is already loaded by the client, which is useful for SPA-style navigation.
+This component is designed in a way that allows you to have multiple forms protected by Turnstile loaded at the same time.
 
 The validateToken method should only be used on the server.  Storing your secret key as an environment variable without the PUBLIC_ prefix will prevent the key from being accidentally exported to the client.  An error will be thrown.  One logical place to include a server-side request to validate a token would be inside a form action.  Alternatively, you could create an api endpoint and submit the token to the endpoint for validation via a custom use:enhance function.
 
@@ -26,14 +26,12 @@ client-side (+page.svelte)
 
 ```svelte
 <script>
-   import { Turnstile, TurnstileElement } from 'sveltekit-turnstile'
+   import { Turnstile } from 'sveltekit-turnstile'
    import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public'
 </script>
 
-<Turnstile />
-
 <form action="/" method="POST" name="form1" ... >
-   <TurnstileElement siteKey={PUBLIC_TURNSTILE_SITE_KEY}/>
+   <Turnstile siteKey={PUBLIC_TURNSTILE_SITE_KEY}/>
    <!-- other form elements -->
 </form>
 
