@@ -1,5 +1,5 @@
 <script>
-	import { browser } from '$app/environment'
+   import { browser } from '$app/environment'
    import { createEventDispatcher } from 'svelte'
    import { onMount } from 'svelte'
    import { turnstileLoaded } from './stores'
@@ -25,9 +25,9 @@
       }
    })
 
-	function turnstileCallback() {
-		turnstileLoaded.set(true)
-	}
+   function turnstileCallback() {
+      turnstileLoaded.set(true)
+   }
 
    function error() {
       dispatch('turnstile-error', {})

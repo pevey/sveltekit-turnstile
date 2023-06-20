@@ -1,63 +1,63 @@
 {
-	"name": "sveltekit-turnstile",
-	"version": "1.1.0",
-	"description": "SvelteKit components for rendering forms and validating form submissions that include cloudflare turnstile tokens for enhanced security",
-	"repository": {
+   "name": "sveltekit-turnstile",
+   "version": "1.1.0",
+   "description": "SvelteKit components for rendering forms and validating form submissions that include cloudflare turnstile tokens for enhanced security",
+   "repository": {
       "type": "git",
       "url": "https://github.com/pevey/sveltekit-turnstile"
    },
-	"homepage": "https://pevey.com/sveltekit-turnstile",
-	"author": "Lacey Pevey",
-	"license": "MIT",
-	"keywords": [
-	  "svelte",
-	  "sveltekit",
-	  "cloudflare",
-	  "turnstile",
-	  "form",
-	  "validation",
-	  "security"
-	],
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build && npm run package",
-		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
-		"prepublishOnly": "npm run package"
-	},
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		},
-		"./Turnstile.svelte": {
-			"types": "./dist/Turnstile.svelte.d.ts",
-			"svelte": "./dist/Turnstile.svelte"
-		},
-		"./validateToken": {
-			"types": "./dist/validateToken.d.ts",
-			"svelte": "./dist/validateToken.js"
-		}
-	},
-	"files": [
-		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
-	],
-	"peerDependencies": {
-		"svelte": "^3.54.0"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.5.0",
-		"@sveltejs/package": "^2.0.0",
-		"publint": "^0.1.9",
-		"svelte": "^3.54.0",
-		"tslib": "^2.4.1",
-		"typescript": "^5.0.0",
-		"vite": "^4.2.0"
-	},
-	"svelte": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"type": "module"
+   "homepage": "https://pevey.com/sveltekit-turnstile",
+   "author": "Lacey Pevey",
+   "license": "MIT",
+   "keywords": [
+     "svelte",
+     "sveltekit",
+     "cloudflare",
+     "turnstile",
+     "form",
+     "validation",
+     "security"
+   ],
+   "scripts": {
+      "dev": "vite dev",
+      "build": "vite build && npm run package",
+      "preview": "vite preview",
+      "package": "svelte-kit sync && svelte-package && publint",
+      "prepublishOnly": "npm run package"
+   },
+   "exports": {
+      ".": {
+         "types": "./dist/index.d.ts",
+         "svelte": "./dist/index.js"
+      },
+      "./Turnstile.svelte": {
+         "types": "./dist/Turnstile.svelte.d.ts",
+         "svelte": "./dist/Turnstile.svelte"
+      },
+      "./validateToken": {
+         "types": "./dist/validateToken.d.ts",
+         "svelte": "./dist/validateToken.js"
+      }
+   },
+   "files": [
+      "dist",
+      "!dist/**/*.test.*",
+      "!dist/**/*.spec.*"
+   ],
+   "peerDependencies": {
+      "svelte": "^3.54.0"
+   },
+   "devDependencies": {
+      "@sveltejs/adapter-auto": "^2.0.0",
+      "@sveltejs/kit": "^1.5.0",
+      "@sveltejs/package": "^2.0.0",
+      "publint": "^0.1.9",
+      "svelte": "^3.54.0",
+      "tslib": "^2.4.1",
+      "typescript": "^5.0.0",
+      "vite": "^4.2.0"
+   },
+   "svelte": "./dist/index.js",
+   "types": "./dist/index.d.ts",
+   "type": "module"
 }
