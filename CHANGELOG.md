@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.0
+
+### Patch Changes
+
+- Bump versions on all dependencies to latest
+
 ## 1.1.0
 
 ### Patch Changes
