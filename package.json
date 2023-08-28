@@ -20,7 +20,7 @@
    ],
    "scripts": {
       "dev": "vite dev",
-      "build": "vite build && npm run package",
+      "build": "shx rm -rf ./dist && vite build && npm run package",
       "preview": "vite preview",
       "package": "svelte-kit sync && svelte-package && publint",
       "prepublishOnly": "npm run package"
@@ -52,6 +52,7 @@
       "@sveltejs/kit": "^1.20.4",
       "@sveltejs/package": "^2.0.0",
       "publint": "^0.1.9",
+      "shx": "^0.3.4",
       "svelte": "^4.0.0",
       "svelte-check": "^3.4.3",
       "tslib": "^2.4.1",
