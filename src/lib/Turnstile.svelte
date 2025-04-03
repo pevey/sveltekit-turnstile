@@ -4,16 +4,20 @@
 	import { onMount } from 'svelte'
 	import { turnstileLoaded } from './stores.js'
 
-	export let siteKey = undefined
+	export let siteKey: string
 	export let fieldName = 'token'
-	export let action = undefined
-	export let cData = undefined
-	export let retryInterval = 8000
-	export let retry = 'auto'
-	export let theme = 'auto'
+	export let action: any = undefined
+	export let cData: any = undefined
+	export let retry: 'auto' | 'never' = 'auto'
+	export let retryInterval: number = 8000
+	export let theme: 'light' | 'dark' | 'auto' = 'auto'
 	export let size = 'normal'
-	export let forms = true
-	export let tabIndex = 0
+	export let forms: boolean = true
+	export let tabIndex: number = 0
+	export let language: string = 'auto'
+	export let refreshExpired: 'auto' | 'manual' | 'never' = 'auto'
+	export let refreshTimeout: 'auto' | 'manual' | 'never' = 'auto'
+	export let appearance: 'always' | 'execute' | 'interaction-only' = 'always'
 
 	const dispatch = createEventDispatcher()
 
@@ -61,7 +65,11 @@
 				retry,
 				theme,
 				cData,
-				size
+				size,
+				language,
+				'refresh-expired': refreshExpired,
+				'refresh-timeout': refreshTimeout,
+				appearance
 			})
 			return {
 				destroy: () => {

@@ -1,5 +1,9 @@
 # Change Log
 
+## 2.0.2
+
+- Expose additional configuration options: refresh-expired, refresh-timeout, and appearance. See https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/ for more information about these options.
+
 ## 2.0.0
 
 - Bump Svelte and SvelteKit versions
