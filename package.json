@@ -1,10 +1,10 @@
 {
 	"name": "sveltekit-turnstile",
-	"version": "2.0.2",
+	"version": "3.0.0",
 	"description": "SvelteKit components for rendering forms and validating form submissions that include cloudflare turnstile tokens for enhanced security",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/pevey/sveltekit-turnstile"
+		"url": "git+https://github.com/pevey/sveltekit-turnstile.git"
 	},
 	"homepage": "https://pevey.com/sveltekit-turnstile",
 	"author": "Lacey Pevey",
@@ -18,14 +18,17 @@
 		"validation",
 		"security"
 	],
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build && npm run prepack",
-		"preview": "vite preview",
-		"prepack": "svelte-kit sync && svelte-package && publint",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-	},
+	"type": "module",
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -38,33 +41,33 @@
 		"./validateToken": {
 			"types": "./dist/validateToken.d.ts",
 			"svelte": "./dist/validateToken.js"
+		},
+		"./getClearance": {
+			"types": "./dist/getClearance.d.ts",
+			"svelte": "./dist/getClearance.js"
 		}
 	},
-	"files": [
-		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
-	],
-	"sideEffects": [
-		"**/*.css"
-	],
-	"svelte": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"type": "module",
+	"scripts": {
+		"build": "svelte-kit sync && svelte-package && publint",
+		"prepublishOnly": "npm run build",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"lint": "svelte-check --tsconfig ./tsconfig.json",
+		"test:unit": "vitest run"
+	},
 	"peerDependencies": {
-		"svelte": "^5.0.0",
-		"@sveltejs/kit": "^2.0.0"
+		"@sveltejs/kit": "^2.22.0 || ^3.0.0-next.0",
+		"svelte": "^5.36.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^4.0.0",
-		"@sveltejs/kit": "^2.20.3",
-		"@sveltejs/package": "^2.3.10",
-		"@sveltejs/vite-plugin-svelte": "^4.0.4",
-		"publint": "^0.3.10",
-		"rimraf": "^6.0.1",
-		"svelte": "^5.25.6",
-		"svelte-check": "^4.1.5",
-		"typescript": "^5.8.2",
-		"vite": "^5.4.17"
+		"@sveltejs/adapter-auto": "8.0.0-next.1",
+		"@sveltejs/kit": "3.0.0-next.10",
+		"@sveltejs/package": "3.0.0-next.3",
+		"@sveltejs/vite-plugin-svelte": "^7.2.0",
+		"publint": "^0.3.0",
+		"svelte": "^5.56.6",
+		"svelte-check": "^4.7.3",
+		"typescript": "^6.0.3",
+		"vite": "^8.1.5",
+		"vitest": "^4.1.10"
 	}
 }
